@@ -1,0 +1,368 @@
+$color_txt: #39386e;
+
+@mixin align_flex($just: center, $align: center, $direct: row) {
+	display: flex;
+	justify-content: $just;
+	align-items: $align;
+	flex-direction: $direct;
+}
+
+section {
+	.title {
+		margin-bottom: 60px;
+	}
+	> p {
+		font-size: 18px;
+		position: relative;
+		width: fit-content;
+		margin-bottom: 32px;
+		img {
+			margin-bottom: -5px;
+			cursor: pointer;
+		}
+		img:hover ~ span {
+			display: block;
+		}
+		span {
+			z-index: 1;
+			display: none;
+			position: absolute;
+			font-size: 14px;
+			width: 205px;
+			padding: 12px 16px;
+			background: #fff;
+			border-radius: 10px;
+			box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+			bottom: -130px;
+			right: -140px;
+		}
+	}
+	.search_help_active{
+		border-color: #f37391;
+		position: relative;
+		#search_button{
+			z-index: 1;
+			background: no-repeat url("/assets/img/search_white.svg");
+			background-size: 100%;;
+		}
+		&::after{
+			content: "";
+			width: 77px;
+			height: 77px;
+			border-radius: 20px;
+			position: absolute;
+			background: #f37391;
+			right: 0;
+		}
+	}
+}
+
+.fonds {
+	.fond_box {
+		border-radius: 20px;
+		background: #fff;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+		padding: 30px;
+		margin: 40px 0;
+		transition: all ease 0.4s;
+		.main_content {
+			@include align_flex();
+			.main_content_img {
+				width: 35%;
+				@include align_flex();
+				padding-right: 25px;
+				img {
+					height: 100%;
+					width: auto;
+				}
+			}
+		}
+		.sub_title {
+			margin-top: 0;
+			margin-bottom: 10px;
+		}
+	}
+	.fond_box:hover{
+		cursor: pointer;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.12);
+	}
+	.main_content_text {
+		width: 75%;
+		p {
+			font-size: 18px;
+			line-height: 21px;
+			margin: 5px 0;
+		}
+		button {
+			background: none;
+			border: none;
+			color: #f37391;
+			font-size: 18px;
+			font-weight: 700;
+			letter-spacing: 0.9px;
+			text-transform: uppercase;
+			padding: 0;
+			cursor: pointer;
+			position: relative;
+		}
+		button::after {
+			content: "";
+			display: block;
+			position: absolute;
+			right: -17px;
+			width: 12px;
+			top: 4px;
+			height: 10px;
+			background: no-repeat url("/assets/img/down_select.svg");
+			background-size: 100%;
+			transform: rotate(180deg);
+		}
+	}
+	.line {
+		background: #f4f3f3;
+		width: calc(100% + 60px);
+		height: 1px;
+		margin-left: -30px;
+		margin-top: 30px;
+	}
+	.other_content {
+		margin-top: 30px;
+		@include align_flex($just: space-between);
+		.statistic {
+			@include align_flex($just: space-between);
+			width: 60%;
+			h6 {
+				color: #9b9cb7;
+				font-size: 18px;
+				text-transform: uppercase;
+				margin: 0;
+				font-weight: 400;
+				margin-bottom: 10px;
+			}
+			p {
+				margin: 0;
+				font-size: 18px;
+				font-weight: 400;
+			}
+		}
+	}
+	.load_more {
+		display: block;
+		font-size: 22px;
+		background: none;
+		font-weight: 700;
+		border-radius: 40px;
+		border: 1px solid #f37391;
+		width: 360px;
+		padding: 16px 30px;
+		color: $color_txt;
+		cursor: pointer;
+		margin: 0 auto;
+		margin-top: 90px;
+	}
+}
+
+.search_help {
+	border: 1px solid #a7a8c0;
+	border-radius: 20px;
+	padding: 25px 25px 25px 33px;
+	@include align_flex($just: flex-start);
+	margin-bottom: 45px;
+}
+
+#search_button {
+	display: block;
+	width: 25px;
+	height: 25px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	background: center no-repeat url("/assets/img/search.svg");
+	background-size: 95%;
+}
+
+.search_help input,
+.search_help input:focus-visible {
+	border: none;
+	outline: none;
+	font-weight: 400;
+	font-size: 18px;
+	color: $color_txt;
+	width: calc(100% - 25px);
+}
+
+.list_fonds {
+	@include align_flex($just: flex-start);
+	flex-wrap: wrap;
+	margin: 0 -5px;
+	button {
+		padding: 10px 25px;
+		border-radius: 10px;
+		border: 1px solid #9b9cb7;
+		color: #39386e;
+		font-size: 18px;
+		margin: 5px;
+		background: none;
+		cursor: pointer;
+	}
+	button:hover {
+		border-color: #f37391;
+	}
+	.list_fond_active{
+		border-color: #f37391;
+	}
+}
+
+@media (max-width: 1223px) {
+	#search_button {
+		width: 30px;
+		height: 30px;
+	}
+	section{
+		.search_help_active{
+			&::after{
+				width: 82px;
+				height: 82px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.search_help {
+		margin-top: 20px;
+		padding: 12px 8px 12px 17px;
+		border-radius: 12px;
+	}
+	#search_button {
+		margin-top: -1px;
+		width: 15px;
+		height: 15px;
+	}
+	.search_help input,
+	.search_help input:focus-visible {
+		font-size: 14px;
+	}
+	section{
+		.search_help_active{
+			&::after{
+				width: 44px;
+				height: 44px;
+				border-radius: 12px;
+			}
+		}
+	}
+}
+
+@media (max-width: 690px) {
+	section {
+		.title {
+			margin-bottom: 17px;
+		}
+		> p {
+			font-size: 14px;
+			line-height: 17px;
+			width: fit-content;
+			img {
+				width: 18px;
+				height: 18px;
+				right: -22px;
+			}
+		}
+	}
+	.search_help {
+		margin: 25px 0 15px 0;
+	}
+	.list_fonds {
+		margin: 0 -1px;
+		button {
+			margin: 1px;
+			padding: 5px 7px;
+			font-size: 14px;
+			border-radius: 5px;
+		}
+	}
+	.fonds {
+		.fond_box {
+			.main_content {
+				flex-direction: column;
+				.main_content_img,
+				.main_content_text {
+					width: 100%;
+				}
+				.main_content_img {
+					padding: 0;
+				}
+				.main_content_text {
+					margin-top: 20px;
+				}
+			}
+			.main_content_text {
+				p {
+					font-size: 14px;
+					line-height: 17px;
+				}
+				button {
+					font-size: 14px;
+				}
+				button::after {
+					top: 3px;
+				}
+			}
+		}
+		.line {
+			margin-top: 13px;
+			margin-bottom: -1px;
+		}
+		.other_content {
+			flex-direction: column;
+			margin: 0;
+			.statistic {
+				width: 100%;
+				h6 {
+					margin-bottom: 5px;
+				}
+				h6,
+				p {
+					font-size: 14px;
+				}
+				.statistic_box:nth-child(2n) {
+					padding: 13px;
+					border: 1px solid #f4f3f3;
+				}
+			}
+		}
+		.load_more {
+			width: 100%;
+			font-size: 14px;
+			padding: 10px 20px;
+			margin-top: 50px;
+		}
+		.main_button{
+			width: calc(100% - 80px);
+		}
+		.line_mob {
+			background: #f4f3f3;
+			width: calc(100% + 60px);
+			height: 1px;
+			margin-bottom: 20px;
+			margin-top: -1px;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	section > p span{
+		right: -22px;
+	}
+}
+@media (max-width: 380px) {
+	section > p span{
+		right: 50px;
+	}
+}
+@media (max-width: 359px) {
+	.fonds .fond_box{
+		padding: 13px;
+	}
+}

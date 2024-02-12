@@ -1,0 +1,291 @@
+$color_txt: #39386e;
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	font-family: "Lato", Arial, Helvetica, sans-serif;
+	overflow-x: hidden;
+	color: $color_txt;
+}
+
+body {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	font-size: 18px;
+}
+
+button,
+a,
+span,
+li {
+	font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+@mixin align_flex($just: center, $align: center, $direct: row) {
+	display: flex;
+	justify-content: $just;
+	align-items: $align;
+	flex-direction: $direct;
+}
+
+.time {
+	background: #e1e1e1;
+	font-size: 18px;
+	padding: 16px 30px;
+}
+
+.sub_title_cat {
+	font-size: 18px;
+}
+
+.cat {
+	@include align_flex($just: flex-start);
+	flex-wrap: wrap;
+	margin: 0 -5px;
+	button {
+		background: none;
+		font-size: 18px;
+		padding: 10px 26px;
+		border-radius: 10px;
+		border: 1px solid #9b9cb7;
+		margin: 5px;
+		cursor: pointer;
+		color: $color_txt;
+		transition: all ease 0.4s;
+		&:hover {
+			border-color: #f37391;
+		}
+	}
+	.list_fond_active{
+		border-color: #f37391
+	}
+}
+
+.applications {
+	.box_applications {
+		@include align_flex();
+		border-radius: 20px;
+		margin: 13px 0;
+		padding: 30px;
+		box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+		transition: all ease 0.4s;
+		button {
+			font-size: 22px;
+			background: none;
+			font-weight: 700;
+			border-radius: 40px;
+			border: 1px solid #f37391;
+			padding: 18px 23px;
+			color: #39386e;
+			cursor: pointer;
+			margin-left: 25px;
+		}
+		&:hover{
+			cursor: pointer;
+			box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.12);
+		}
+	}
+	.list_applications {
+		@include align_flex();
+		flex-wrap: wrap;
+		width: 100%;
+		.wrap_appl {
+			@include align_flex(start, start, column);
+			span {
+				font-size: 14px;
+				color: #9b9cb7;
+			}
+			p {
+				@include align_flex();
+				position: relative;
+				margin: 0;
+				margin-top: 15px;
+			}
+			.info {
+				@include align_flex();
+				position: relative;
+				color: #9b9cb7;
+				.i-ico {
+					width: 22px;
+					height: 22px;
+					display: block;
+					margin-left: 5px;
+					cursor: pointer;
+				}
+				.i-ico:hover + span {
+					display: block;
+				}
+				span {
+					position: absolute;
+					display: none;
+					width: 210px;
+					padding: 15px;
+					box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+					border-radius: 10px;
+					background: #fff;
+					z-index: 1;
+					bottom: -85px;
+				}
+			}
+			.working {
+				color: #39386e;
+				img {
+					margin-top: -4px;
+				}
+			}
+			.succes {
+				color: #0fa958;
+				span {
+					bottom: -70px;
+				}
+			}
+			.closed {
+				color: #ff3838;
+				span {
+					bottom: -120px;
+				}
+			}
+			img {
+				margin-right: 7px;
+			}
+		}
+		.wrap_appl:first-child {
+			width: 20%;
+		}
+		.wrap_appl:nth-child(3n) {
+			width: 21%;
+		}
+		.wrap_appl:last-child {
+			width: 24%;
+		}
+		.fond_appl {
+			width: 35%;
+		}
+	}
+}
+
+.paginat {
+	@include align_flex($just: start);
+	span {
+		color: $color_txt;
+		font-size: 16px;
+		padding: 3px 8px;
+		border-radius: 4px;
+		font-weight: 500;
+		cursor: pointer;
+		margin: 0 2px;
+	}
+	.active_pag {
+		background: #f37391;
+		color: #fff;
+	}
+	img {
+		cursor: pointer;
+	}
+}
+
+.applications .box_applications .but_vol{
+	background: #f37391;
+	color: #fff;
+}
+
+@media (max-width: 874px) {
+	.applications .box_applications {
+		flex-direction: column;
+		button {
+			margin: 0;
+			margin-top: 30px;
+			max-width: 360px;
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 660px) {
+	.time {
+		font-size: 12px;
+		padding: 10px 18px;
+	}
+	.sub_title_cat {
+		font-size: 14px;
+	}
+	.cat {
+		margin: 0 -1px;
+		button {
+			font-size: 14px;
+			margin: 1px;
+			padding: 5px 7px;
+			border-radius: 5px;
+		}
+	}
+	.applications {
+		.box_applications {
+			padding: 30px 15px;
+			border-radius: 10px;
+			button {
+				font-size: 14px;
+				padding: 10px 20px;
+				width: 100%;
+			}
+		}
+		.list_applications {
+			.wrap_appl {
+				span {
+					font-size: 12px;
+				}
+				p {
+					font-size: 14px;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 520px) {
+	.applications {
+		.list_applications {
+			.wrap_appl{
+				.info {
+					span{
+						bottom: -70px;
+					}
+				}
+				.working {
+					span {
+						bottom: -80px;
+					}
+				}
+				.succes {
+					span {
+						bottom: -55px;
+					}
+				}
+				.closed {
+					span {
+						bottom: -100px;
+					}
+				}
+			}
+			.wrap_appl:first-child {
+				width: 40%;
+			}
+			.wrap_appl:nth-child(3n) {
+				margin-top: 20px;
+				width: 40%;
+			}
+			.wrap_appl:last-child {
+				margin-top: 20px;
+				width: 60%;
+			}
+			.fond_appl {
+				width: 60%;
+			}
+		}
+	}
+}

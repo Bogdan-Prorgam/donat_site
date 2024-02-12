@@ -1,0 +1,279 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  color: #39386e;
+}
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-size: 18px;
+}
+
+button,
+a,
+span,
+li {
+  font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+.time {
+  background: #e1e1e1;
+  font-size: 18px;
+  padding: 16px 30px;
+}
+
+.sub_title_cat {
+  font-size: 18px;
+}
+
+.cat {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+.cat button {
+  background: none;
+  font-size: 18px;
+  padding: 10px 26px;
+  border-radius: 10px;
+  border: 1px solid #9b9cb7;
+  margin: 5px;
+  cursor: pointer;
+  color: #39386e;
+  transition: all ease 0.4s;
+}
+.cat button:hover {
+  border-color: #f37391;
+}
+.cat .list_fond_active {
+  border-color: #f37391;
+}
+
+.applications .box_applications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px;
+  margin: 13px 0;
+  padding: 30px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+  transition: all ease 0.4s;
+}
+.applications .box_applications button {
+  font-size: 22px;
+  background: none;
+  font-weight: 700;
+  border-radius: 40px;
+  border: 1px solid #f37391;
+  padding: 18px 23px;
+  color: #39386e;
+  cursor: pointer;
+  margin-left: 25px;
+}
+.applications .box_applications:hover {
+  cursor: pointer;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.12);
+}
+.applications .list_applications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.applications .list_applications .wrap_appl {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.applications .list_applications .wrap_appl span {
+  font-size: 14px;
+  color: #9b9cb7;
+}
+.applications .list_applications .wrap_appl p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  margin: 0;
+  margin-top: 15px;
+}
+.applications .list_applications .wrap_appl .info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  color: #9b9cb7;
+}
+.applications .list_applications .wrap_appl .info .i-ico {
+  width: 22px;
+  height: 22px;
+  display: block;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.applications .list_applications .wrap_appl .info .i-ico:hover + span {
+  display: block;
+}
+.applications .list_applications .wrap_appl .info span {
+  position: absolute;
+  display: none;
+  width: 210px;
+  padding: 15px;
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  background: #fff;
+  z-index: 1;
+  bottom: -85px;
+}
+.applications .list_applications .wrap_appl .working {
+  color: #39386e;
+}
+.applications .list_applications .wrap_appl .working img {
+  margin-top: -4px;
+}
+.applications .list_applications .wrap_appl .succes {
+  color: #0fa958;
+}
+.applications .list_applications .wrap_appl .succes span {
+  bottom: -70px;
+}
+.applications .list_applications .wrap_appl .closed {
+  color: #ff3838;
+}
+.applications .list_applications .wrap_appl .closed span {
+  bottom: -120px;
+}
+.applications .list_applications .wrap_appl img {
+  margin-right: 7px;
+}
+.applications .list_applications .wrap_appl:first-child {
+  width: 20%;
+}
+.applications .list_applications .wrap_appl:nth-child(3n) {
+  width: 21%;
+}
+.applications .list_applications .wrap_appl:last-child {
+  width: 24%;
+}
+.applications .list_applications .fond_appl {
+  width: 35%;
+}
+
+.paginat {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+}
+.paginat span {
+  color: #39386e;
+  font-size: 16px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 2px;
+}
+.paginat .active_pag {
+  background: #f37391;
+  color: #fff;
+}
+.paginat img {
+  cursor: pointer;
+}
+
+.applications .box_applications .but_vol {
+  background: #f37391;
+  color: #fff;
+}
+
+@media (max-width: 874px) {
+  .applications .box_applications {
+    flex-direction: column;
+  }
+  .applications .box_applications button {
+    margin: 0;
+    margin-top: 30px;
+    max-width: 360px;
+    width: 100%;
+  }
+}
+@media (max-width: 660px) {
+  .time {
+    font-size: 12px;
+    padding: 10px 18px;
+  }
+  .sub_title_cat {
+    font-size: 14px;
+  }
+  .cat {
+    margin: 0 -1px;
+  }
+  .cat button {
+    font-size: 14px;
+    margin: 1px;
+    padding: 5px 7px;
+    border-radius: 5px;
+  }
+  .applications .box_applications {
+    padding: 30px 15px;
+    border-radius: 10px;
+  }
+  .applications .box_applications button {
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 100%;
+  }
+  .applications .list_applications .wrap_appl span {
+    font-size: 12px;
+  }
+  .applications .list_applications .wrap_appl p {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 520px) {
+  .applications .list_applications .wrap_appl .info span {
+    bottom: -70px;
+  }
+  .applications .list_applications .wrap_appl .working span {
+    bottom: -80px;
+  }
+  .applications .list_applications .wrap_appl .succes span {
+    bottom: -55px;
+  }
+  .applications .list_applications .wrap_appl .closed span {
+    bottom: -100px;
+  }
+  .applications .list_applications .wrap_appl:first-child {
+    width: 40%;
+  }
+  .applications .list_applications .wrap_appl:nth-child(3n) {
+    margin-top: 20px;
+    width: 40%;
+  }
+  .applications .list_applications .wrap_appl:last-child {
+    margin-top: 20px;
+    width: 60%;
+  }
+  .applications .list_applications .fond_appl {
+    width: 60%;
+  }
+}/*# sourceMappingURL=applications.css.map */

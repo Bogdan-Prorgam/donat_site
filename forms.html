@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<title>Формы</title>
+</head>
+
+<body>
+	<div id="all_modals">
+		<div id='registration_modal' class='modal'>
+			<div class="modal_box">
+				<div class="head_modal">
+					<h6>Регистрация</h6>
+				</div>
+				<form action="">
+					<input placeholder="E-mail" type="email">
+					<div class="password_in">
+						<input placeholder="Введите пароль" type="password">
+						<img src="/assets/img/eye_close.svg" class="hide_eye" alt="глаз">
+					</div>
+					<div class="password_in_repit">
+						<input placeholder="Повторите пароль" type="password">
+						<img src="/assets/img/eye_close.svg" class="hide_eye" alt="глаз закрытый">
+					</div>
+					<div class="sub_form">
+						<div>
+							<input type="checkbox" id="check_in" name="" checked>
+							<label for="happy"></label>
+							<span>Соглашаюсь на <a href="#">оферту</a></span>
+						</div>
+						<div id="login_head_modal" class="sub_form__button">Войти в аккаунт</div>
+					</div>
+					<input class="form_modal_button" type="submit" value="Зарегистрироваться">
+				</form>
+				<span class='close'>&times;</span>
+			</div>
+		</div>
+		<div id='login_modal' class='modal'>
+			<div class="modal_box">
+				<div class="head_modal">
+					<h6>Вход</h6>
+				</div>
+				<form action="">
+					<input placeholder="E-mail" type="email">
+					<div class="password_in">
+						<input placeholder="Введите пароль" type="password">
+						<img src="/assets/img/eye_close.svg" class="hide_eye" alt="глаз">
+					</div>
+					<div class="sub_form">
+						<div id="reset_head_modal" class="sub_form__button">Восстановить пароль</div>
+						<div id="registration_head_modal" class="sub_form__button">Зарегистрироваться</div>
+					</div>
+					<input class="form_modal_button" type="submit" value="Войти">
+				</form>
+				<span class='close'>&times;</span>
+			</div>
+		</div>
+		<div id='reset_modal' class='modal'>
+			<div class="modal_box">
+				<div class="head_modal">
+					<h6>Восстановление пароля</h6>
+				</div>
+				<form action="">
+					<p>Мы отправим на вашу почту временный пароль. Вы сможете изменить его в личном кабинете.</p>
+					<label class="label_reset" for="email">E-mail</label>
+					<input placeholder="E-mail" type="email">
+					<div id="next_succes_reset" class="form_modal_button">Восстановить</div>
+				</form>
+				<span class='close'>&times;</span>
+			</div>
+		</div>
+		<div id='succes_reset_modal' class='modal'>
+			<div class="modal_box">
+				<p>Отправили вам на почту danya.de@design.com
+					временный пароль для входа в аккаунт</p>
+				<button id="close_succes_reset" class="form_modal_button">Хорошо</button>
+				<span class='close'>&times;</span>
+			</div>
+		</div>
+	</div>
+	<style>
+		.modal {
+			display: block;
+		}
+	</style>
+</body>
+
+</html>
