@@ -125,7 +125,7 @@ header .header__language {
   cursor: pointer;
 }
 header .header__language::after {
-  content: url(/assets/img/down_trial.svg);
+  content: url(../../assets/img/down_trial.svg);
   width: 9px;
   height: 9px;
   display: block;
@@ -554,7 +554,7 @@ header .header__language_view .ru_lang {
 }
 #catalog .select-selected:after {
   position: absolute;
-  content: url(/assets/img/down_select.svg);
+  content: url(../../assets/img/down_select.svg);
   transform: rotate(180deg);
   top: calc(50% - 12px);
   right: 10px;
@@ -631,7 +631,7 @@ header .header__language_view .ru_lang {
   color: #39386e;
 }
 #catalog .search-selected-box::after {
-  content: url(/assets/img/search.svg);
+  content: url(../../assets/img/search.svg);
   position: absolute;
   right: 8px;
   top: 12px;
@@ -672,7 +672,7 @@ header .header__language_view .ru_lang {
   background: none;
   border: none;
   cursor: pointer;
-  background: center no-repeat url("/assets/img/search.svg");
+  background: center no-repeat url("./assets/img/search.svg");
   background-size: 95%;
 }
 #catalog .search_help input,
@@ -922,7 +922,7 @@ footer .contact a {
   color: #ffffff;
 }
 footer .contact a::before {
-  content: url(/assets/img/email.png);
+  content: url(../../assets/img/email.png);
   width: 32px;
   margin-right: 12px;
   margin-top: 6px;
@@ -1092,7 +1092,7 @@ footer .contact a::before {
 .modal_box #check_in:checked + label::before {
   position: absolute;
   margin-left: -30px;
-  background-image: url("/assets/img/check.svg");
+  background-image: url("./assets/img/check.svg");
   background-size: 90%;
 }
 .modal_box .sub_form span {
@@ -1462,7 +1462,7 @@ header .header__button {
     margin-top: 16px;
   }
   header .header__language::after {
-    content: url(/assets/img/down_trial.png);
+    content: url(../../assets/img/down_trial.png);
     top: -2px;
   }
   header .header__language_view {
@@ -1691,7 +1691,7 @@ header .header__button {
     content: "";
     right: 0;
     top: calc(50% - 10px);
-    background: no-repeat url("/assets/img/down_select.svg");
+    background: no-repeat url("./assets/img/down_select.svg");
     width: 17px;
     height: 17px;
     display: block;

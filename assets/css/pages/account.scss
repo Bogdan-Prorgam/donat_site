@@ -415,7 +415,7 @@ header {
 }
 .select-selected:after {
 	position: absolute;
-	content: url(/assets/img/Down_pay.svg);
+	content: url(../../assets/img/Down_pay.svg);
 	transform: rotate(180deg);
 	top: calc(50% - 10px);
 	right: 17px;
@@ -598,7 +598,7 @@ footer {
 			color: #ffffff;
 		}
 		a::before {
-			content: url(/assets/img/email.png);
+			content: url(../../assets/img/email.png);
 			width: 32px;
 			margin-right: 12px;
 			margin-top: 6px;
